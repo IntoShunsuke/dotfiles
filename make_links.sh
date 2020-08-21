@@ -3,6 +3,9 @@
 echo "ln -fs $HOME/envfiles/.bash_aliases $HOME/"
 ln -fs $HOME/envfiles/.bash_aliases $HOME/
 
+echo "ln -fs $HOME/envfiles/.gitconfig $HOME/"
+ln -fs $HOME/envfiles/.gitconfig $HOME/
+
 # neovim
 echo "mkdir -p $HOME/.config/nvim"
 mkdir -p $HOME/.config/nvim
