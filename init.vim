@@ -49,6 +49,9 @@ nnoremap <C-t> <C-w>ji
 "ターミナル挿入モードからターミナルモードへ以降
 tnoremap <Esc> <C-\><C-n>
 
+" Use deoplete
+let g:deoplete#enable_at_startup = 1
+
 " dein settings
 if &compatible
   set nocompatible
