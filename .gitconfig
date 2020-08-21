@@ -1,0 +1,9 @@
+[user]
+	name = IntoShunsuke
+	email = shunsuke.into@gmail.com
+[core]
+	editor = /usr/bin/vim
+[alias]
+	ci = commit
+        s = status
+        co = checkout
