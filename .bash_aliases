@@ -1,5 +1,8 @@
 # aliases
 alias ls="ls -F --color=auto"
+alias ll="ls -l"
+alias la="ls -a"
+
 alias grep='grep --color=auto'
 alias c="clear"
 alias ..='cd ..'
