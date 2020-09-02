@@ -2,15 +2,24 @@ set number
 set ignorecase
 set smartcase
 set wrapscan
+set autoindent
+set smartindent
+set showmatch
 set incsearch
 set inccommand=split
 set shiftwidth=2
 set softtabstop=2
 set expandtab
 set smarttab
+set listchars=tab:>-,trail:-
+set list
 set shiftround
 set clipboard+=unnamed,unnamedplus
 set wildmode=longest,full
+
+augroup MyAutoCmd
+  autocmd!
+augroup END
 
 nnoremap j gj
 nnoremap k gk
@@ -19,11 +28,11 @@ vnoremap k gk
 
 nnoremap <Bar> $:let pos = getpos(".")<CR>:join<CR>:call setpos('.', pos)<CR>
 
+map <F3> :set hlsearch!<CR> 
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
 nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
 
 set helplang=ja
@@ -82,5 +91,7 @@ endif
 if has('vim_starting') && dein#check_install()
   call dein#install()
 endif
+
+syntax on
 
 

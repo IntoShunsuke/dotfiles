@@ -22,5 +22,22 @@ repo = 'Shougo/neocomplete'
 if = 'has("lua")'
 on_i = 1
 
+[[plugins]]
+repo = 'Shougo/neosnippet'
+if = 'has("lua")'
+on_i = 1
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+if = 'has("lua")'
+on_i = 1
+
+[[plugins]]
+repo = 'scrooloose/syntastic'
+on_i = 1
+
+[[plugins]]
+repo = 'Townk/vim-autoclose'
+on_i = 1
 
 
