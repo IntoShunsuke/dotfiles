@@ -6,7 +6,6 @@ set autoindent
 set smartindent
 set showmatch
 set incsearch
-set inccommand=split
 set shiftwidth=2
 set softtabstop=2
 set expandtab
@@ -86,27 +85,6 @@ map <silent> [Tag]n :tabnext<CR>
 map <silent> [Tag]p :tabprevious<CR>
 " tp 前のタブ
 
-" 下部分にターミナルウィンドウを設置
-function! Myterm()
-  split
-  wincmd j
-  resize 5 
-  terminal
-  wincmd k
-endfunction
-command! Myterm call Myterm()
-
-" 起動時にターミナルウィンドウを設置
-"if has('vim_starting')
-" Myterm
-"endif
-
-"上のエディタウィンドウと下のターミナルウィンドウ(ターミナル挿入モード)を行き来
-tnoremap <C-t> <C-\><C-n><C-w>k
-nnoremap <C-t> <C-w>ji
-"ターミナル挿入モードからターミナルモードへ以降
-tnoremap <Esc> <C-\><C-n>
-
 " Use deoplete
 let g:deoplete#enable_at_startup = 1
 
@@ -120,6 +98,9 @@ let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 " なければgit clone
 if !isdirectory(s:dein_repo_dir)
   execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  if !has('nvim')
+    execute 'cd ~/.cache/dein/repos/github.com/Shougo/dein.vim; git checkout 1.0'
+  endif
 endif
 execute 'set runtimepath^=' . s:dein_repo_dir
 
@@ -142,5 +123,30 @@ if has('vim_starting') && dein#check_install()
 endif
 
 syntax on
+
+if has('nvim')
+  set inccommand=split
+ " 下部分にターミナルウィンドウを設置
+  function! Myterm()
+    split
+    wincmd j
+    resize 5 
+    terminal
+    wincmd k
+  endfunction
+  command! Myterm call Myterm()
+  
+  " 起動時にターミナルウィンドウを設置
+  "if has('vim_starting')
+  " Myterm
+  "endif
+  
+  "上のエディタウィンドウと下のターミナルウィンドウ(ターミナル挿入モード)を行き来
+  tnoremap <C-t> <C-\><C-n><C-w>k
+  nnoremap <C-t> <C-w>ji
+  "ターミナル挿入モードからターミナルモードへ以降
+  tnoremap <Esc> <C-\><C-n>
+
+endif
 
 
