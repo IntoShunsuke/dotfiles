@@ -7,3 +7,4 @@
 	ci = commit
         s = status
         co = checkout
+        b = branch

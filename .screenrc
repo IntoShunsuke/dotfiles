@@ -1,0 +1,9 @@
+startup_message off
+vbell off
+escape ^Tt
+
+## スクロール行数
+defscrollback 10000
+
+## マウススクロール有効
+termcapinfo xterm* ti@:te@
