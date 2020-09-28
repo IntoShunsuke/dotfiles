@@ -32,6 +32,9 @@ hook_add = '''
 repo = 'cespare/vim-toml'
 on_ft = ['toml']
 
+[[plugins]]
+repo = 'scrooloose/syntastic'
+on_ft = ['verilog']
 
 
 

@@ -1,3 +1,7 @@
+defutf8 on
+defencoding utf8
+encofing utf8 utf8
+
 startup_message off
 vbell off
 escape ^Tt
