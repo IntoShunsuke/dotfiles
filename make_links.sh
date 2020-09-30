@@ -20,3 +20,9 @@ echo "ln -fs $HOME/envfiles/.dein.toml $HOME/"
 ln -fs $HOME/envfiles/.dein.toml $HOME/
 echo "ln -fs $HOME/envfiles/.dein_lazy.toml $HOME/"
 ln -fs $HOME/envfiles/.dein_lazy.toml $HOME/
+
+# snippets
+echo "mkdir -p $HOME/.config/"
+mkdir -p $HOME/.config/
+echo "ln -fsn $HOME/envfiles/snippets/ $HOME/.config/nvim/"
+ln -fsn $HOME/envfiles/snippets/ $HOME/.config/nvim/

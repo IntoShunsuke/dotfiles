@@ -180,7 +180,7 @@ endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
 " neocomplete/neosnippet settings
-
+let g:neosnippet#snippets_directory = '~/.config/nvim/snippets/'
 
 syntax on
 
