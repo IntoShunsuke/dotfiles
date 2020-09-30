@@ -20,6 +20,9 @@ repo = 'Shougo/unite.vim'
 depends = 'neomru.vim'
 
 [[plugins]]
+repo = 'shougo/neosnippet-snippets'
+
+[[plugins]]
 repo = 'hrp/EnhancedCommentify'
 
 [[plugins]]
@@ -28,6 +31,7 @@ hook_add = '''
   set background=dark
   au MyAutoCmd VimEnter * nested colorscheme hybrid
 '''
+
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = ['toml']

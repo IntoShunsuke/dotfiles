@@ -13,7 +13,6 @@ set smarttab
 set listchars=tab:>-,trail:-
 set list
 set shiftround
-set mouse=a
 set clipboard+=unnamed,unnamedplus
 set wildmode=longest,full
 
@@ -179,6 +178,9 @@ if !exists('g:neocomplete#keyword_patterns')
         let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" neocomplete/neosnippet settings
+
 
 syntax on
 
