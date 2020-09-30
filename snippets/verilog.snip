@@ -1,0 +1,21 @@
+snippet module 
+abbr module () ... endmodule
+  module ${1:#:name} (
+    ${2:#:signals}
+  );
+    ${0}
+  
+  endmodule
+
+snippet moduleparam 
+abbr module #(parameter)() ... endmodule
+  module ${1:#:name} #(
+    ${2:#:parameter}
+  )(
+    ${3:#:signals} 
+  );
+    ${0}
+  
+  endmodule
+
+
