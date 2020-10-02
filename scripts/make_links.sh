@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # .bash_aliases
-if [-e $HOME/..bash_aliases]; then
+if [ -e $HOME/..bash_aliases ]; then
   echo "ln -fs $HOME/envfiles/.bash_aliases $HOME/"
   ln -fs $HOME/envfiles/.bash_aliases $HOME/
   echo -e  '
