@@ -1,3 +1,7 @@
+
+let g:python_host_prog = system("echo -n (pyenv root)/versions/(pyenv global | grep '^2')/bin/python")
+let g:python3_host_prog = system("echo -n (pyenv root)/versions/(pyenv global | grep '^3')/bin/python")
+
 set number
 set ignorecase
 set smartcase

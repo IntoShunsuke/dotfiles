@@ -1,8 +1,17 @@
 #!/bin/bash
 
-echo "ln -fs $HOME/envfiles/.bash_aliases $HOME/"
-ln -fs $HOME/envfiles/.bash_aliases $HOME/
-
+# .bash_aliases
+if [-e $HOME/..bash_aliases]; then
+  echo "ln -fs $HOME/envfiles/.bash_aliases $HOME/"
+  ln -fs $HOME/envfiles/.bash_aliases $HOME/
+  echo -e  '
+  # .bash_aliases
+  if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+  fi
+  ' >> $HOME/.bashrc
+fi
+ 
 echo "ln -fs $HOME/envfiles/.gitconfig $HOME/"
 ln -fs $HOME/envfiles/.gitconfig $HOME/
 
