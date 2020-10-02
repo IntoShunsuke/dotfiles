@@ -10,6 +10,10 @@ if [ -e $HOME/..bash_aliases ]; then
     . ~/.bash_aliases
   fi
   ' >> $HOME/.bashrc
+
+  echo -e  '
+    export PS1="\[\e[38;5;2m\]\u@\h \[\e[0m\]\[\e[38;5;26m\]\w \[\e[0m\] \n\$ "
+  ' >> $HOME/.bashrc
 fi
  
 echo "ln -fs $HOME/envfiles/.gitconfig $HOME/"
