@@ -26,9 +26,6 @@ else
   ln -fs $HOME/envfiles/init.vim $HOME/.vimrc
 fi
 # dein 
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-sh ./installer.sh ~/.cache/dein
-rm ./installer.sh
 echo "ln -fs $HOME/envfiles/.dein.toml $HOME/"
 ln -fs $HOME/envfiles/.dein.toml $HOME/
 echo "ln -fs $HOME/envfiles/.dein_lazy.toml $HOME/"
