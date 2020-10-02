@@ -1,7 +1,3 @@
-
-let g:python_host_prog = system("echo -n (pyenv root)/versions/(pyenv global | grep '^2')/bin/python")
-let g:python3_host_prog = system("echo -n (pyenv root)/versions/(pyenv global | grep '^3')/bin/python")
-
 set number
 set ignorecase
 set smartcase
@@ -189,6 +185,12 @@ let g:neosnippet#snippets_directory = '~/.config/nvim/snippets/'
 syntax on
 
 if has('nvim')
+  if isdirectory( $PYENV_ROOT."/versions/nvim-python2" )
+    let g:python_host_prog = $PYENV_ROOT.'/versions/nvim-python2/bin/python'
+  endif
+  if isdirectory( $PYENV_ROOT."/versions/nvim-python3" )
+    let g:python3_host_prog = $PYENV_ROOT.'/versions/nvim-python3/bin/python'
+  endif
   set inccommand=split
  " 下部分にターミナルウィンドウを設置
   function! Myterm()

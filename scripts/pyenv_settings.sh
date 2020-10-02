@@ -23,10 +23,17 @@ else
   fi
   ' >> $HOME/.bashrc
   
-  # install 2 and 3 
-  pyenv install 2.7.9
-  pyenv install 3.8.6
-  
   source $HOME/.bashrc
+
+  # install 2 and 3 
+  pyenv install 2.7.16
+  pyenv install 3.8.6
+
+  # create virtualenv for nvim
+  pyenv virtualenv 2.7.16 nvim-python2
+  pyenv activate nvim-python2
+  pyenv virtualenv 3.8.6 nvim-python3
+  pyenv activate nvim-python3
+  
 fi
 
