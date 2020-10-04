@@ -1,35 +1,86 @@
-set number
-set ignorecase
-set smartcase
-set wrapscan
-set autoindent
-set smartindent
-set showmatch
-set incsearch
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-set smarttab
-set listchars=tab:>-,trail:-
-set list
-set shiftround
-set clipboard+=unnamed,unnamedplus
-set wildmode=longest,full
-
+" release autogroup in MyAutoCmd
 augroup MyAutoCmd
   autocmd!
 augroup END
+
+" Display settings
+set list
+set number
+set wrapscan
+set textwidth=0
+set t_vb=
+set novisualbell
+set smarttab
+set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↲
+
+" search settings
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
+cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
+
+" editing settings
+set shiftround
+set infercase
+set virtualedit=all
+set hidden
+set switchbuf=useopen
+set showmatch
+set matchpairs& matchpairs+=<:>
+set backspace=indent,eol,start
+if has('unnamedplus')
+  set clipboard& clipboard+=unnamedplus,unnamed 
+else
+  set clipboard& clipboard+=unnamed
+endif
+set nowritebackup
+set nobackup
+set noswapfile
+set autoindent
+set smartindent
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set wildmode=full
+
+" macro and key settings
+nnoremap <F3> :set hlsearch!<CR>
+
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
 
 nnoremap j gj
 nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+inoremap <silent> jj <ESC>
+
+" 空行の挿入
+noremap O :<C-u>call append(expand('.'), '')<Cr>j
+
 inoremap <C-a> <C-o>^
 inoremap <C-s> <C-o>$
 
 noremap ; :
 noremap : ;
+
+" Shift + 矢印でウィンドウサイズを変更
+nnoremap <S-Left>  <C-w><<CR>
+nnoremap <S-Right> <C-w>><CR>
+nnoremap <S-Up>    <C-w>-<CR>
+nnoremap <S-Down>  <C-w>+<CR>
 
 function! ExecExCommand(cmd)
   silent exec a:cmd
@@ -38,14 +89,11 @@ endfunction
 inoremap <silent> <expr> <C-p> "<C-r>=ExecExCommand('normal k')<CR>"
 inoremap <silent> <expr> <C-n> "<C-r>=ExecExCommand('normal j')<CR>"
 
-nnoremap <F3> :set hlsearch!<CR>
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-noremap O :<C-u>call append(expand('.'), '')<Cr>j
-
 set helplang=ja
+
+" vim-easy-align
+xmap ga <Plug>（EasyAlign）
+nmap ga <Plug>（EasyAlign）
 
 " Anywhere SID.
 function! s:SID_PREFIX()

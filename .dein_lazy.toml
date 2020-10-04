@@ -41,8 +41,4 @@ on_i = 1
 repo = 'scrooloose/syntastic'
 on_i = 1
 
-[[plugins]]
-repo = 'Townk/vim-autoclose'
-on_i = 1
-
 
