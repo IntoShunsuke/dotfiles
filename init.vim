@@ -60,6 +60,11 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+vnoremap <C-d> <C-d>zz
+vnoremap <C-u> <C-u>zz
+
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
