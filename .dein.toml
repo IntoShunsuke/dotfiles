@@ -2,25 +2,25 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'Shougo/vimproc.vim'
+repo  = 'Shougo/vimproc.vim'
 build = 'make'
 
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
 
 [[plugins]]
-repo  = 'cespare/vim-toml'
+repo = 'cespare/vim-toml'
 
 [[plugins]]
-repo = 'Shougo/neomru.vim'
+repo    = 'Shougo/neomru.vim'
 on_path = '.*'
 
 [[plugins]]
-repo = 'Shougo/unite.vim'
+repo    = 'Shougo/unite.vim'
 depends = 'neomru.vim'
 
 [[plugins]]
-repo = 'leafcage/yankround.vim'
+repo    = 'leafcage/yankround.vim'
 depends = 'unite.vim'
 
 [[plugins]]
@@ -37,9 +37,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'junegunn/vim-easy-align'
-
-[[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = ['toml']
 
@@ -47,5 +44,6 @@ on_ft = ['toml']
 repo = 'scrooloose/syntastic'
 on_ft = ['verilog']
 
-
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
 
