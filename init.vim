@@ -87,6 +87,9 @@ nnoremap <S-Right> <C-w>><CR>
 nnoremap <S-Up>    <C-w>-<CR>
 nnoremap <S-Down>  <C-w>+<CR>
 
+" syntax settings
+autocmd BufRead,BufNewFile *.vh setf verilog
+
 function! ExecExCommand(cmd)
   silent exec a:cmd
   return ''
