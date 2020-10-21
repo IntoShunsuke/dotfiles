@@ -100,8 +100,8 @@ inoremap <silent> <expr> <C-n> "<C-r>=ExecExCommand('normal j')<CR>"
 set helplang=ja
 
 " vim-easy-align
-xmap ga <Plug>（EasyAlign）
-nmap ga <Plug>（EasyAlign）
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 " Anywhere SID.
 function! s:SID_PREFIX()
@@ -133,19 +133,20 @@ set showtabline=2 " 常にタブラインを表示
 " The prefix key.
 nnoremap    [Tag]   <Nop>
 nmap    t [Tag]
+
 " Tab jump
 for n in range(1, 9)
   execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
 endfor
 " t1 で1番左のタブ、t2 で1番左から2番目のタブにジャンプ
 
-map <silent> [Tag]c :tablast <bar> tabnew<CR>
+noremap <silent> [Tag]c :tablast <bar> tabnew<CR>
 " tc 新しいタブを一番右に作る
-map <silent> [Tag]x :tabclose<CR>
+noremap <silent> [Tag]x :tabclose<CR>
 " tx タブを閉じる
-map <silent> [Tag]n :tabnext<CR>
+noremap <silent> [Tag]n :tabnext<CR>
 " tn 次のタブ
-map <silent> [Tag]p :tabprevious<CR>
+noremap <silent> [Tag]p :tabprevious<CR>
 " tp 前のタブ
 
 " Use deoplete
@@ -193,9 +194,6 @@ highlight PMenuSbar ctermbg=4
 " 補完ウィンドウの設定
 set completeopt=menuone
 
-" 補完ウィンドウの設定
-set completeopt=menuone
-
 " rsenseでの自動補完機能を有効化
 let g:rsenseUseOmniFunc = 1
 " let g:rsenseHome = '/usr/local/lib/rsense-0.3'
@@ -231,7 +229,7 @@ endif
 let g:neocomplete#force_omni_input_patterns.ruby = '[^.*\t]\.\w*\|\h\w*::'
 
 if !exists('g:neocomplete#keyword_patterns')
-        let g:neocomplete#keyword_patterns = {}
+  let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
