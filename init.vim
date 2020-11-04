@@ -31,9 +31,9 @@ set showmatch
 set matchpairs& matchpairs+=<:>
 set backspace=indent,eol,start
 if has('unnamedplus')
-  set clipboard& clipboard+=unnamedplus,unnamed 
+  set clipboard& clipboard^=unnamedplus,unnamed 
 else
-  set clipboard& clipboard+=unnamed
+  set clipboard& clipboard^=unnamed
 endif
 set nowritebackup
 set nobackup
