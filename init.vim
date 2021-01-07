@@ -97,6 +97,11 @@ endfunction
 inoremap <silent> <expr> <C-p> "<C-r>=ExecExCommand('normal k')<CR>"
 inoremap <silent> <expr> <C-n> "<C-r>=ExecExCommand('normal j')<CR>"
 
+" Enable 256 colors FORCELY on screen
+if $TERM == 'screen'
+    set t_Co=256
+endif
+
 set helplang=ja
 
 " vim-easy-align
